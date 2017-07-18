@@ -2,6 +2,10 @@
   function SongPlayer() {
     var SongPlayer = {};
 
+    /**
+    * @desc Holds the currently playing song used for logic throughout services
+    * @type {Object}
+    */
     var currentSong = null;
 
     /**
@@ -39,6 +43,11 @@
       song.playing = true;
     };
 
+    /**
+    * @function SongPlayer.play method
+    * @desc Plays song whether paused or not.
+    * @param {Object} song
+    */
     SongPlayer.play = function(song) {
       if (currentSong !== song) {
         setSong(song);
@@ -49,6 +58,11 @@
       }
     };
 
+    /**
+    * @function SongPlayer.pause method
+    * @desc Pauses song whether and sets song.playing = false
+    * @param {Object} song
+    */
     SongPlayer.pause = function(song) {
       currentBuzzObject.pause();
       song.playing = false;
