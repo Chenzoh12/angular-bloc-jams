@@ -1,17 +1,11 @@
 (function() {
-<<<<<<< HEAD
-  function AlbumCtrl() {
-    this.albumData = albumPicasso;
-    }
-    
-=======
-  function AlbumCtrl(Fixtures) {
+  function AlbumCtrl(Fixtures, SongPlayer) {
       this.albumData = Fixtures.getAlbum();
+      this.songPlayer = SongPlayer;
     }
 
->>>>>>> ng-checkpoint-6
 
   angular
     .module('blocJams')
-    .controller( 'AlbumCtrl', ['Fixtures', AlbumCtrl] );
+    .controller( 'AlbumCtrl', ['Fixtures', 'SongPlayer', AlbumCtrl] );
 })();
